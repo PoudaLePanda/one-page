@@ -114,17 +114,17 @@ let transpileJSForProd = () => {
 
 let compressImages = () => {
     return src(`dev/img/**/*`)
-        .pipe(imageCompressor({
-            optipng: [`-i 1`, `-strip all`, `-fix`, `-o7`, `-force`],
-            pngquant: [`--speed=1`, `--force`, 256],
-            zopflipng: [`-y`, `--lossy_8bit`, `--lossy_transparent`],
-            jpegRecompress: [`--strip`, `--quality`, `medium`, `--min`, 40,
-                `--max`, 80],
-            mozjpeg: [`-optimize`, `-progressive`],
-            gifsicle: [`--optimize`],
-            svgo: [`--enable`, `cleanupIDs`, `--disable`, `convertColors`],
-            quiet: false
-        }))
+        // .pipe(imageCompressor({
+        //     optipng: [`-i 1`, `-strip all`, `-fix`, `-o7`, `-force`],
+        //     pngquant: [`--speed=1`, `--force`, 256],
+        //     zopflipng: [`-y`, `--lossy_8bit`, `--lossy_transparent`],
+        //     jpegRecompress: [`--strip`, `--quality`, `medium`, `--min`, 40,
+        //         `--max`, 80],
+        //     mozjpeg: [`-optimize`, `-progressive`],
+        //     gifsicle: [`--optimize`],
+        //     svgo: [`--enable`, `cleanupIDs`, `--disable`, `convertColors`],
+        //     quiet: false
+        // }))
         .pipe(dest(`dist/img`));
 };
 
