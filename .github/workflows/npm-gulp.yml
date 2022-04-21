@@ -30,8 +30,7 @@ jobs:
     - name: Commit files
       id: commit
       run: |
-        git config --local user.name "GitHub Action"
-        git config --local user.email "action@github.com"
+        git config --local user.name  ${{ github.actor }}
         git add --all
         if [-z "$(git status --porcelain)"]; then
            echo "::set-output name=push::false"
