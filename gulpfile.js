@@ -10,7 +10,8 @@ const { src, dest, series, watch } = require(`gulp`),
     jsConcat = require(`gulp-concat`),
     sass = require(`gulp-sass`)(require(`sass`)),
     browserSync = require(`browser-sync`),
-    reload = browserSync.reload;
+    reload = browserSync.reload,
+    ghPages = require('gulp-gh-pages');
 
 // SASS Paths
 let sassPaths = ['./node_modules'];
@@ -63,6 +64,11 @@ let validateHTML = () => {
         `dev/html/*.html`,
         `dev/html/**/*.html`])
         .pipe(htmlValidator(undefined));
+};
+
+let deployToDist = () => {
+    return src('./dist/**/*')
+        .pipe(ghPages());
 };
 
 let compileCSSForDev = () => {
@@ -252,4 +258,13 @@ exports.build = series(
     transpileJSForProd,
     compressImages,
     copyUnprocessedAssetsForProd
+);
+
+exports.deploy = series(
+    compressHTML,
+    compileCSSForProd,
+    transpileJSForProd,
+    compressImages,
+    copyUnprocessedAssetsForProd,
+    deployToDist
 );
