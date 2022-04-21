@@ -1,0 +1,93 @@
+#animate-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  // 0 286px
+  // 1 454px
+  // 2 388px
+  // 3 431px
+  // 4 377px
+  // 5 304px
+  // 6 415px
+  // 7 226px
+  // 8 377px
+  // 9 286px
+  /* init'd the dash style for each path
+       and also animate them*/
+  /* and also add this code below */
+  path:nth-child(2) {
+    stroke-dasharray: 286px;
+    stroke-dashoffset: 286px;
+
+    animation: lineanim 1.5s ease forwards;
+  }
+
+  path:nth-child(3) {
+    stroke-dasharray: 454px;
+    stroke-dashoffset: 454px;
+
+    animation: lineanim 1.5s ease 0.3s forwards;
+  }
+
+  path:nth-child(4) {
+    stroke-dasharray: 388px;
+    stroke-dashoffset: 388px;
+
+    animation: lineanim 1.5s ease 0.6s forwards;
+  }
+
+  path:nth-child(5) {
+    stroke-dasharray: 431px;
+    stroke-dashoffset: 431px;
+
+    animation: lineanim 1.5s ease 0.9s forwards;
+  }
+
+  path:nth-child(6) {
+    stroke-dasharray: 377px;
+    stroke-dashoffset: 377px;
+
+    animation: lineanim 1.5s ease 1.2s forwards;
+  }
+
+  path:nth-child(7) {
+    stroke-dasharray: 304px;
+    stroke-dashoffset: 304px;
+
+    animation: lineanim 1.5s ease 1.5s forwards;
+  }
+
+  path:nth-child(8) {
+    stroke-dasharray: 415px;
+    stroke-dashoffset: 415px;
+
+    animation: lineanim 1.5s ease 1.8s forwards;
+  }
+
+  path:nth-child(9) {
+    stroke-dasharray: 226px;
+    stroke-dashoffset: 226px;
+
+    animation: lineanim 1.5s ease 2.1s forwards;
+  }
+
+  path:nth-child(10) {
+    stroke-dasharray: 377px;
+    stroke-dashoffset: 377px;
+
+    animation: lineanim 1.5s ease 2.4s forwards;
+  }
+  path:nth-child(11) {
+    stroke-dasharray: 286px;
+    stroke-dashoffset: 286px;
+
+    animation: lineanim 1.5s ease 2.4s forwards;
+  }
+}
+@keyframes lineanim {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

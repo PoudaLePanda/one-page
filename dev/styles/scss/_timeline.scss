@@ -1,0 +1,99 @@
+.formation-experience-container {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: +1;
+  #formation-experience {
+    padding: 2em;
+    div {
+      position: relative;
+      padding: 2em;
+      text-align: center;
+      h1 {
+        // color: $Halsey-Badlands-3-hex;
+        font-size: 3em;
+        font-weight: 900;
+        text-transform: uppercase;
+        // margin: 0 auto;
+        // border-bottom: 2px $Halsey-Badlands-3-hex dashed;
+      }
+    }
+  }
+}
+.formation-experience-timeline {
+  padding-top: 250px;
+  padding-bottom: 50px;
+}
+
+.experience {
+  width: 50% !important;
+  align-self: flex-end !important;
+  flex-direction: row !important;
+  display: -webkit-flex !important;
+  position: relative !important;
+  margin-left: 2em !important;
+  padding-bottom: 2em !important;
+  margin-right: 0 !important;
+  .timeline-content {
+    text-align: left !important;
+    padding: 1em 0 0 2em !important;
+    align-items: flex-start !important;
+  }
+  &::before {
+    left: -0.5px !important;
+    right: 0 !important;
+  }
+  .timeline-marker {
+    transform: translateX(-50%) !important;
+  }
+}
+.formation {
+  align-self: flex-start !important;
+  flex-direction: row-reverse !important;
+  margin-left: 0 !important;
+  padding-bottom: 2em !important;
+  margin-right: 2em !important;
+  .timeline-content {
+    text-align: right !important;
+    padding: 1em 2em 0 0 !important;
+    align-items: flex-end !important;
+  }
+  &::before {
+    right: -0.5px !important;
+    left: auto !important;
+  }
+  .timeline-marker {
+    transform: translateX(50%) !important;
+  }
+}
+
+// #reveal-timeline-1,
+// #reveal-timeline-2,
+// #reveal-timeline-3,
+// #reveal-timeline-4,
+// #reveal-timeline-5,
+// #reveal-timeline-6,
+// #reveal-timeline-7,
+// #reveal-timeline-8 {
+//   opacity: 0;
+//   -webkit-transform: scale(0.9);
+//   -moz-transform: scale(0.9);
+//   -ms-transform: scale(0.9);
+//   -o-transform: scale(0.9);
+//   transform: scale(0.9);
+//   -webkit-transition: all 1s ease-in-out;
+//   -moz-transition: all 1s ease-in-out;
+//   -ms-transition: all 1s ease-in-out;
+//   -o-transition: all 1s ease-in-out;
+//   transition: all 1s ease-in-out;
+//   .visible {
+//     opacity: 1;
+//     -webkit-transform: none;
+//     -moz-transform: none;
+//     -ms-transform: none;
+//     -o-transform: none;
+//     transform: none;
+//   }
+// }

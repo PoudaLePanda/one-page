@@ -1,0 +1,89 @@
+#skills {
+  overflow: hidden;
+  .content-skills {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    .box {
+      // width: 300px;
+      // margin: 0 auto;
+      // backdrop-filter: saturate(180%) blur(20px);
+      // background-color: var(--nav-background-color);
+      // box-shadow: 0 1px 0 var(--nav-border-color);
+    }
+  }
+  .item-logo {
+    transform: translateY(-150vh);
+    height: 100px;
+    width: 100px;
+    padding: 20px;
+    &.visible {
+      transform: translateY(0);
+    }
+    div {
+      display: block;
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .logo_firefox {
+      background-image: url(../img/logo/logo_firefox.png);
+    }
+    .logo_angular {
+      background-image: url(../img/logo/logo_angular.png);
+    }
+    .logo_angularmaterial {
+      background-image: url(../img/logo/logo_angularmaterial.svg);
+    }
+    .logo_bootstrap {
+      background-image: url(../img/logo/logo_bootstrap.png);
+    }
+    .logo_chrome {
+      background-image: url(../img/logo/logo_chrome.svg);
+    }
+    .logo_css {
+      background-image: url(../img/logo/logo_css.png);
+    }
+    .logo_firefox {
+      background-image: url(../img/logo/logo_firefox.png);
+    }
+    .logo_git {
+      background-image: url(../img/logo/logo_git.png);
+    }
+    .logo_gitlab {
+      background-image: url(../img/logo/logo_gitlab.png);
+    }
+    .logo_gulp {
+      background-image: url(../img/logo/logo_gulp.png);
+    }
+    .logo_html {
+      background-image: url(../img/logo/logo_html.png);
+    }
+    .logo_javascript {
+      background-image: url(../img/logo/logo_javascript.png);
+    }
+    .logo_mjml {
+      background-image: url(../img/logo/logo_mjml.svg);
+    }
+    .logo_mongodb {
+      background-image: url(../img/logo/logo_mongodb.png);
+    }
+    .logo_postman {
+      background-image: url(../img/logo/logo_postman.png);
+    }
+    .logo_sass {
+      background-image: url(../img/logo/logo_sass.png);
+    }
+    .logo_typescript {
+      background-image: url(../img/logo/logo_typescript.png);
+    }
+    .logo_visualstudio {
+      background-image: url(../img/logo/logo_visualstudio.png);
+    }
+    .logo_webpack {
+      background-image: url(../img/logo/logo_webpack.png);
+    }
+  }
+}

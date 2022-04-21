@@ -1,0 +1,50 @@
+.switcher {
+  position: fixed;
+  right: calc(1rem / 2 + 0px);
+  bottom: 1rem;
+  width: auto;
+  margin-bottom: 0;
+  padding: 0.75rem;
+  border-radius: 2rem;
+  line-height: 1;
+  z-index: +1;
+  text-align: right;
+}
+.switcher:focus,
+.switcher:hover {
+  max-width: 100%;
+  transition: background-color 1s, border-color 1s, color 1s, box-shadow 1s;
+}
+.switcher::after {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 0.15rem solid currentColor;
+  border-radius: 50%;
+  background: linear-gradient(to right, currentColor 0, currentColor 50%, transparent 50%);
+  content: "";
+  vertical-align: bottom;
+  transition: transform 1s;
+}
+.switcher:hover::after {
+  transform: rotate(180deg);
+}
+.switcher i {
+  display: inline-block;
+  max-width: 0;
+  padding: 0;
+  overflow: hidden;
+  font-style: normal;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+.switcher:hover i {
+  max-width: 100%;
+  padding: 0 calc(1rem / 2) 0 calc(1rem / 4);
+  transition: max-width 1s, padding 1s;
+}
+@media (min-width: 576px) {
+  .switcher {
+    right: calc(1rem + 0px);
+  }
+}

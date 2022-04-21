@@ -1,0 +1,26 @@
+#navbar {
+  #navbarMyName {
+    svg {
+      width: auto;
+      height: 35px;
+      path {
+        transition: fill 1s, stroke 1s;
+        fill: $primary;
+        stroke: $primary;
+      }
+    }
+  }
+
+  &.is-primary {
+    #navbarMyName svg path {
+      fill: white;
+      stroke: white;
+    }
+  }
+  // &.is-light {
+  //   #navbarMyName svg path {
+  //     fill: $primary;
+  //     stroke: $primary;
+  //   }
+  // }
+}

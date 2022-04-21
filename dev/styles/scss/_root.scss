@@ -1,0 +1,31 @@
+/* Color Theme Swatches in Hex */
+$Godcast-1-hex: #364abf;
+$Godcast-2-hex: #5464bf;
+$Godcast-3-hex: #dce0f2;
+$Godcast-4-hex: #f2e6d0;
+$Godcast-5-hex: #f27e63;
+/* Color Theme Swatches in Hex */
+$Halsey-Badlands-1-hex: #4baabf;
+$Halsey-Badlands-2-hex: #79f2e6;
+$Halsey-Badlands-3-hex: #d9d8d2;
+$Halsey-Badlands-4-hex: #73736f;
+$Halsey-Badlands-5-hex: #262626;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $Halsey-Badlands-5-hex;
+$grey-light: $Halsey-Badlands-4-hex;
+$primary: $Halsey-Badlands-1-hex;
+$link: $Halsey-Badlands-1-hex;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $Halsey-Badlands-5-hex;
+$body-color: $Halsey-Badlands-3-hex;
+
+// Update some of Bulma's component variables
+// $body-background-color: $Halsey-Badlands-3-hex;
+$control-border-width: 7px;
+$input-border-color: transparent;
+$input-shadow: none;
