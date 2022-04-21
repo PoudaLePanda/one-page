@@ -91,7 +91,7 @@ let transpileJSForDev = () => {
 let compressHTML = () => {
     return src([`dev/html/*.html`, `dev/html/**/*.html`])
         .pipe(htmlCompressor({ collapseWhitespace: true }))
-        .pipe(dest(`prod`));
+        .pipe(dest(`dist`));
 };
 
 let compileCSSForProd = () => {
@@ -101,7 +101,7 @@ let compileCSSForProd = () => {
             outputStyle: `compressed`,
             precision: 10
         }).on(`error`, sass.logError))
-        .pipe(dest(`prod/styles`));
+        .pipe(dest(`dist/styles`));
 };
 
 let transpileJSForProd = () => {
@@ -109,7 +109,7 @@ let transpileJSForProd = () => {
         .pipe(babel())
         .pipe(jsCompressor())
         .pipe(jsConcat(`bundle.js`))
-        .pipe(dest(`prod/scripts`));
+        .pipe(dest(`dist/scripts`));
 };
 
 let compressImages = () => {
@@ -125,7 +125,7 @@ let compressImages = () => {
             svgo: [`--enable`, `cleanupIDs`, `--disable`, `convertColors`],
             quiet: false
         }))
-        .pipe(dest(`prod/img`));
+        .pipe(dest(`dist/img`));
 };
 
 let copyUnprocessedAssetsForProd = () => {
@@ -139,7 +139,7 @@ let copyUnprocessedAssetsForProd = () => {
         `!dev/**/*.js`,  // ignore JS;
         `!dev/styles/**` // and, ignore Sass/CSS.
     ], { dot: true })
-        .pipe(dest(`prod`));
+        .pipe(dest(`dist`));
 };
 
 let serve = () => {
@@ -172,7 +172,7 @@ let serve = () => {
 async function clean() {
     let fs = require(`fs`),
         i,
-        foldersToDelete = [`./temp`, `prod`];
+        foldersToDelete = [`./temp`, `dist`];
 
     for (i = 0; i < foldersToDelete.length; i++) {
         try {
@@ -247,7 +247,7 @@ exports.serve = series(
     serve
 );
 exports.build = series(
-    // compressHTML,
+    compressHTML,
     compileCSSForProd,
     transpileJSForProd,
     compressImages,
