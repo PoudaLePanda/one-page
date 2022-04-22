@@ -11,7 +11,84 @@
   bottom: 0;
   transform: scale(0.8);
 }
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+  }
+  55% {
+    transform: translate(0, 5px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
+}
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+
+  @return $randomNum;
+}
 #header {
+  #myName {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    svg#animate-logo {
+      height: max-content;
+      width: 80%;
+      margin: 0 auto;
+      overflow: visible;
+      path {
+        fill: whitesmoke;
+        transform: scale(1);
+        // transform: translate(0);
+        animation-name: floating;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        &#animate-logo-l {
+          transform: scale(1);
+          transform: translate(0);
+          // animation-duration: 2.5s;
+        }
+        &#animate-logo-m {
+          transform: scale(1);
+          transform: translate(0);
+          // animation-duration: 2s;
+        }
+        //
+        // &#animate-logo-e {
+        //   animation-duration: 2.7s;
+        // }
+        // &#animate-logo-o {
+        //   animation-duration: 2.4s;
+        // }
+        // //
+        // &#animate-logo-ee {
+        //   animation-duration: 3.1s;
+        // }
+
+        // &#animate-logo-y {
+        //   animation-duration: 2.8s;
+        // }
+
+        // &#animate-logo-n {
+        //   animation-duration: 2.2s;
+        // }
+
+        // &#animate-logo-i {
+        //   animation-duration: 1.3s;
+        // }
+
+        // &#animate-logo-eee {
+        //   animation-duration: 1.9s;
+        // }
+
+        // &#animate-logo-ll {
+        //   animation-duration: 1.5s;
+        // }
+      }
+    }
+  }
   #typewriter {
     position: absolute;
     top: 50%;
@@ -27,16 +104,6 @@
       margin: 0 auto; /* Gives that scrolling effect as the typing happens */
       letter-spacing: 0.15em; /* Adjust as needed */
       animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
-    }
-  }
-  #myName {
-    svg {
-      transform: scale(1.8);
-      path {
-        // transition: fill 1s, stroke 1s;
-        fill: white;
-        stroke: white;
-      }
     }
   }
 }

@@ -1,17 +1,22 @@
-.fade,
+.fadeIn,
+.fadeOut,
 .enter-left,
 .enter-right {
-    transition: all 0.6s;
+  transition: all 0.6s;
 }
-.fade.out {
-    opacity: 0;
-    transform: translateY(64px);
+.fadeIn.out {
+  opacity: 0;
+  transform: translateY(64px);
+}
+.fadeOut.in {
+  opacity: 0;
+  transform: translateY(64px);
 }
 .enter-left.out {
-    opacity: 0;
-    transform: translatex(-64px);
+  opacity: 0;
+  transform: translatex(-64px);
 }
 .enter-right.out {
-    opacity: 0;
-    transform: translatex(64px);
+  opacity: 0;
+  transform: translatex(64px);
 }

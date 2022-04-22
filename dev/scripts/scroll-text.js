@@ -4,7 +4,7 @@ jQuery(document).ready(function ($) {
     // init controller
     var controller = new ScrollMagic.Controller();
     //fade
-    $(`.fade`).each(function () {
+    $(`.fadeIn`).each(function () {
         $(this).addClass(`out`);
         new ScrollMagic.Scene({
             triggerElement: this,
@@ -12,6 +12,16 @@ jQuery(document).ready(function ($) {
         })
             .on(`enter`, function (ev) { $(ev.target.triggerElement()).removeClass(`out`); })
             .on(`leave`, function (ev) { $(ev.target.triggerElement()).addClass(`out`); })
+            .addTo(controller);
+    });
+    $(`.fadeOut`).each(function () {
+        $(this).addClass(`in`);
+        new ScrollMagic.Scene({
+            triggerElement: this,
+            triggerHook: 0.75
+        })
+            .on(`enter`, function (ev) { $(ev.target.triggerElement()).removeClass(`in`); })
+            .on(`leave`, function (ev) { $(ev.target.triggerElement()).addClass(`in`); })
             .addTo(controller);
     });
     //enter-left
