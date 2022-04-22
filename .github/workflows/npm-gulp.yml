@@ -30,12 +30,7 @@ jobs:
     - name: Commit changes
       uses: EndBug/add-and-commit@v9
       with:
-        author_name: PoudaLePanda
-        author_email: leo.meyniel@gmail.com
+        default_author: github_actions
         add: --all
+        new_branch: prod
 
-    - name: Push changes
-      if: steps.commit.outputs.push == 'true'
-      uses: ad-m/github-push-action@master
-      with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
