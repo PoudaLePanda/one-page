@@ -27,10 +27,11 @@ jobs:
         npm install
         gulp build
         
-    - name: Commit changes
-      uses: EndBug/add-and-commit@v9
-      with:
-        default_author: github_actions
-        add: --all
-        new_branch: prod
+    - name: Deploy
+      uses: s0/git-publish-subdir-action@develop
+      env:
+        REPO: self
+        BRANCH: gh-pages
+        FOLDER: dist
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
