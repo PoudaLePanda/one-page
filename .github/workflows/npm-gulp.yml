@@ -16,9 +16,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v3
-      with:
-        persist-credentials: false
-        fetch-depth: 0
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -30,19 +27,12 @@ jobs:
         npm install
         gulp build
         
-    - name: Commit files
-      id: commit
-      run: |
-        git config --local user.name "PoudaLePanda"
-        git config --local user.email "leo.meyniel@gmail.com"
-        git add --all
-        if [-z "$(git status --porcelain)"]; then
-           echo "::set-output name=push::false"
-        else
-           git commit -m "Add changes" -a
-           echo "::set-output name=push::true"
-        fi
-      shell: bash
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v9
+      with:
+        author_name: PoudaLePanda
+        author_email: leo.meyniel@gmail.com
+        add: --all
 
     - name: Push changes
       if: steps.commit.outputs.push == 'true'
